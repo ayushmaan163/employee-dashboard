@@ -16,7 +16,19 @@ const EmployeeCard = ({ data }) => {
         <div style={{ fontWeight: "bold" }}>{data.name}</div>
 
         {/* Email-id */}
-        <div style={{ marginBottom: "1.5rem" }}>{data.email}</div>
+        <div
+          style={{
+            marginBottom: "1.5rem",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "0.5rem",
+            fontSize: "small",
+          }}
+        >
+          <i class="fa-regular fa-envelope" />
+          {data.email}
+        </div>
 
         {/* Buttons */}
         <div className="card-button">
