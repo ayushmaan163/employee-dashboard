@@ -1,11 +1,30 @@
+import { Outlet, createBrowserRouter } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 function App() {
   return (
     <>
-      <div>App</div>
+      <div>
+        <Header />
+        <Outlet />
+      </div>
     </>
   );
 }
 
-export default App;
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+    ],
+  },
+]);
+
+export default appRouter;
