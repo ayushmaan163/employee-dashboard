@@ -13,7 +13,11 @@ const EmployeeCard = ({ data }) => {
         />
 
         {/* Name */}
-        <div style={{ fontWeight: "bold" }}>{data.name}</div>
+        <div style={{ fontWeight: "bold" }}>
+          {data.id}
+          {".  "}
+          {data.name}
+        </div>
 
         {/* Email-id */}
         <div
