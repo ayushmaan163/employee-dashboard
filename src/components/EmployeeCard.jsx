@@ -1,6 +1,10 @@
 import userIcon from "../assets/user-icon.png";
 
-const EmployeeCard = ({ data }) => {
+const EmployeeCard = ({ data, setShowData, showData }) => {
+  const handleDelete = (data) => {
+    setShowData((prevData) => prevData.filter((item) => item.id !== data.id));
+  };
+
   return (
     <>
       <div className="employee-card">
@@ -37,7 +41,9 @@ const EmployeeCard = ({ data }) => {
         {/* Buttons */}
         <div className="card-button">
           <button className="editBtn">Edit</button>
-          <button className="deleteBtn">Delete</button>
+          <button className="deleteBtn" onClick={() => handleDelete(data)}>
+            Delete
+          </button>
         </div>
       </div>
     </>
